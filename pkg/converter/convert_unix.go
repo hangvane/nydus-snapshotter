@@ -322,7 +322,7 @@ func Pack(ctx context.Context, dest io.Writer, opt PackOption) (io.WriteCloser, 
 
 	builderPath := getBuilder(opt.BuilderPath)
 
-	requiredFeatures := tool.NewFeatures(tool.FeatureTar2Rafs)
+	requiredFeatures := tool.NewFeatures()
 	if opt.BatchSize != "" && opt.BatchSize != "0" {
 		requiredFeatures.Add(tool.FeatureBatchSize)
 	}
